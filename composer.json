@@ -1,6 +1,6 @@
 {
   "name": "chronhub/message",
-  "description": "",
+  "description": "message",
   "keywords": [
     "message domain command query event"
   ],
