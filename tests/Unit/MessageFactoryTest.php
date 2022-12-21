@@ -10,12 +10,11 @@ use Chronhub\Message\Domain;
 use Chronhub\Message\Message;
 use Chronhub\Message\MessageFactory;
 use Prophecy\Prophecy\ObjectProphecy;
-use Chronhub\Message\Tests\Double\SomeEvent;
-use Chronhub\Message\Tests\Double\SomeQuery;
-use Chronhub\Message\Tests\ProphecyTestCase;
-use Chronhub\Message\Tests\Double\SomeCommand;
+use Chronhub\Testing\ProphecyTestCase;
+use Chronhub\Testing\Double\Message\SomeEvent;
+use Chronhub\Testing\Double\Message\SomeQuery;
+use Chronhub\Testing\Double\Message\SomeCommand;
 use Chronhub\Contracts\Support\Serializer\MessageSerializer;
-use Chronhub\Message\Tests\Double\SomeCommandWithConstructor;
 
 final class MessageFactoryTest extends ProphecyTestCase
 {
@@ -88,7 +87,6 @@ final class MessageFactoryTest extends ProphecyTestCase
         yield [SomeCommand::fromContent($content)];
         yield [SomeEvent::fromContent($content)];
         yield [SomeQuery::fromContent($content)];
-        yield [new SomeCommandWithConstructor($content)];
     }
 
     private readonly MessageSerializer|ObjectProphecy $messageSerializer;

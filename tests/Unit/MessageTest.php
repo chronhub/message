@@ -10,11 +10,10 @@ use RuntimeException;
 use Chronhub\Message\Domain;
 use Chronhub\Message\Message;
 use InvalidArgumentException;
-use Chronhub\Message\Tests\UnitTestCase;
-use Chronhub\Message\Tests\Double\SomeEvent;
-use Chronhub\Message\Tests\Double\SomeQuery;
-use Chronhub\Message\Tests\Double\SomeCommand;
-use Chronhub\Message\Tests\Double\SomeCommandWithConstructor;
+use Chronhub\Testing\UnitTestCase;
+use Chronhub\Testing\Double\Message\SomeEvent;
+use Chronhub\Testing\Double\Message\SomeQuery;
+use Chronhub\Testing\Double\Message\SomeCommand;
 
 final class MessageTest extends UnitTestCase
 {
@@ -145,8 +144,6 @@ final class MessageTest extends UnitTestCase
         yield [SomeCommand::fromContent($content)->withHeaders($headers)];
         yield [SomeEvent::fromContent($content)->withHeaders($headers)];
         yield [SomeQuery::fromContent($content)->withHeaders($headers)];
-
-        yield [(new SomeCommandWithConstructor($content))->withHeaders($headers)];
     }
 
     public function provideObject(): Generator
@@ -154,7 +151,8 @@ final class MessageTest extends UnitTestCase
         yield [new stdClass()];
         yield [new class()
         {
+            //
         }, ];
-        yield [(fn (): bool => true)(...)];
+        yield [(static fn (): bool => true)(...)];
     }
 }

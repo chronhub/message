@@ -7,15 +7,14 @@ namespace Chronhub\Message\Tests\Unit;
 use Generator;
 use RuntimeException;
 use Chronhub\Message\Domain;
-use Chronhub\Message\Tests\UnitTestCase;
+use Chronhub\Testing\UnitTestCase;
 use Chronhub\Contracts\Message\Messaging;
 use Chronhub\Contracts\Message\DomainEvent;
 use Chronhub\Contracts\Message\DomainQuery;
-use Chronhub\Message\Tests\Double\SomeEvent;
-use Chronhub\Message\Tests\Double\SomeQuery;
 use Chronhub\Contracts\Message\DomainCommand;
-use Chronhub\Message\Tests\Double\SomeCommand;
-use Chronhub\Message\Tests\Double\SomeCommandWithConstructor;
+use Chronhub\Testing\Double\Message\SomeEvent;
+use Chronhub\Testing\Double\Message\SomeQuery;
+use Chronhub\Testing\Double\Message\SomeCommand;
 
 final class DomainTest extends UnitTestCase
 {
@@ -122,7 +121,5 @@ final class DomainTest extends UnitTestCase
         yield [SomeCommand::fromContent($content)];
         yield [SomeEvent::fromContent($content)];
         yield [SomeQuery::fromContent($content)];
-
-        yield [new SomeCommandWithConstructor($content)];
     }
 }

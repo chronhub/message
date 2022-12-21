@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Chronhub\Message\Tests\Unit;
 
-use Chronhub\Message\Tests\UnitTestCase;
-use Chronhub\Message\Tests\Stub\ObjectWithConstructableContent;
+use Chronhub\Testing\UnitTestCase;
+use Chronhub\Testing\Double\Message\ObjectWithConstructableContent;
 
 final class HasConstructableContentTest extends UnitTestCase
 {
