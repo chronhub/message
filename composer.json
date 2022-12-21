@@ -1,8 +1,8 @@
 {
   "name": "chronhub/message",
-  "description": "message",
+  "description": "Message and base domain for commmand, event and query",
   "keywords": [
-    "message domain command query event"
+    "message", "domain", "command", "query", "event"
   ],
   "license": "MIT",
   "authors": [
@@ -16,6 +16,7 @@
     "chronhub/contracts": "dev-main"
   },
   "require-dev": {
+    "chronhub/testing": "dev-main",
     "laravel/pint": "^0.2",
     "nunomaduro/larastan": "^2.1",
     "orchestra/testbench": "7.*",
